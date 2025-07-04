@@ -1,0 +1,35 @@
+package gmail;
+
+import java.util.Arrays;
+
+public class kadans {
+  public static void main(String args[]) {
+	  int []a= {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+	  int res= solve1(a);
+	  System.out.println("a :"+Arrays.toString(a));
+	  System.out.println("max sum:"+res);
+  }
+  public static int solve(int a[]) {
+	  int maxSum=Integer.MIN_VALUE;
+	  for(int i=0 ;i<a.length;i++) {
+		  int sum=0;
+		  for(int j=i;j<a.length;j++) {
+			  sum+=a[j];
+			  if(sum>maxSum)
+				  maxSum=sum;
+				  
+		  }
+	  }
+	  return maxSum;
+  }
+  public static int solve1(int a[]) {
+	  //{-2, 1, -3, 4, -1, 2, 1, -5, 4}
+	  int cs=a[0];
+	  int ms=a[0];
+	  for(int i=1;i<a.length;i++) {
+		  cs=Math.max(a[i],cs+a[i]);
+		  ms=Math.max(ms, cs);
+	  }
+	  return ms;
+  }
+}
