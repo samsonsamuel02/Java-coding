@@ -1,0 +1,39 @@
+package gmail;
+import java.util.*;
+public class Strings {	
+               
+	public static void main(String[] args) {
+		String str=new String("s4a2m4s3s8");
+		char a[]=str.toCharArray();
+		System.out.println(Arrays.toString(a));
+		String nums="";
+		
+		for(int i=1;i<a.length;i++) {
+			if(a[i]>='0' && a[i]<='9') {
+				nums+=a[i];
+				
+			}
+			else
+				nums+=" ";
+		}
+		System.out.println(nums);
+		
+		String n[] = nums.trim().split(" +");
+		System.out.println(Arrays.toString(n));
+		
+		for(int i=0,m=0;i<a.length;i++) {
+			if(a[i]>='a' && a[i]<='z') {
+				for(int j=1;j<=Integer.parseInt(n[m]);j++) {
+					
+					System.out.print(a[i]+" ");
+					
+				}
+				m++;
+				System.out.println();
+			}
+			
+		}
+		
+	}
+	
+}
