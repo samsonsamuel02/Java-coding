@@ -1,0 +1,27 @@
+class Solution {
+    public String convert(String s, int numRows) {
+        if(numRows==1 || numRows>=s.length()){
+            return s;
+        }
+        StringBuilder[] rows=new StringBuilder[numRows];
+        for(int i=0;i<numRows;i++){
+            rows[i]=new StringBuilder();
+        }
+        int start=0;
+        boolean movingDown=false;
+
+        for(char c: s.toCharArray()){
+            rows[start].append(c);
+            if(start==0 || start==numRows-1){
+                movingDown=!movingDown;
+            }
+            start+=movingDown?1:-1;
+        }
+        StringBuilder res=new StringBuilder();
+        for(StringBuilder row:rows){
+            res.append(row);
+        }
+        return res.toString();
+        
+    }
+}
