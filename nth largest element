@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class NthLargest {
+    public static void main(String[] args) {
+
+        int[] arr = {4,2,7,7,3,4,9};
+        int n = 3;
+
+        HashSet<Integer> set = new HashSet<>();
+
+        for(int num : arr){
+            set.add(num);
+        }
+
+        ArrayList<Integer> list = new ArrayList<>(set);
+
+        Collections.sort(list);
+
+        int result = list.get(list.size() - n);
+
+        System.out.println("Nth Largest: " + result);
+    }
+}
