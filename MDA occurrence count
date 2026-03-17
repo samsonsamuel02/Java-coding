@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class OccurrenceCount {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int rows = sc.nextInt();
+        int cols = sc.nextInt();
+
+        int[][] a = new int[rows][cols];
+
+        // Input matrix
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        // Number to search
+        int n = sc.nextInt();
+
+        int count = 0;
+
+        // Count occurrences
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (a[i][j] == n) {
+                    count++;
+                }
+            }
+        }
+
+        System.out.println(count);
+    }
+}
