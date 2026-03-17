@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class DiaSum {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[][] a = new int[n][n];
+
+        // Input
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        int primarysum = 0, secondarysum = 0;
+
+        for (int i = 0; i < n; i++) {
+            primarysum += a[i][i];
+            secondarysum += a[i][n - i - 1];
+        }
+
+        System.out.println("Primary: " + primarysum);
+        System.out.println("Secondary: " + secondarysum);
+    }
+}
